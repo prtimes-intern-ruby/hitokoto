@@ -3,5 +3,8 @@
     <%= post.title %>
     <%= post.content %>
     <%= post.user.name %>
+    <%= post.set_date %>
   </div>
 <% end %>
+
+<%= paginate @posts %>
