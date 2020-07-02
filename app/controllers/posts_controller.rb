@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!
   def index
-    @posts = Post.all
+    posts = current_user.posts
+    current_user.followings.each { |following| posts += following.posts }
+    @posts = posts.page(params[:page]).per(20).order(created_at: :desc)
   end
 
   def show

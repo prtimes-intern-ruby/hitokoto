@@ -13,6 +13,8 @@ class User < ApplicationRecord
   # フォローしている人
   has_many :relationships, class_name: 'Relationship', foreign_key: "follower_id"
   has_many :followings, through: :relationships , source: :followee
+  
+  attachment :profile_image
 
   def following?(another_user)
     self.followings.include?(another_user)
