@@ -1,0 +1,12 @@
+<%= link_to user_followings_path(@user) do %>
+  フォロー<br>
+  <%= @user.followings.count %>
+<% end %>
+<%= link_to user_followers_path(@user) do %>
+  フォロワー<br>
+  <%= @user.followers.count %>
+<% end %>
+
+<div class="follow-btn">
+  <%= render 'users/follow_btn', user: @user %>
+</div>
