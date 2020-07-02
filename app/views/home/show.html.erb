@@ -1,0 +1,11 @@
+<%= @result['title'] %>
+
+<%= form_for(Post.new) do |f| %>
+  <%= f.text_field :title %><br>
+  <%= f.text_area :content %><br>
+  <%= f.attachment_field :image %>
+  <%= f.collection_select :category, Category.all, :id, :name, {include_blank: '選択してください'} %>
+  <%= f.hidden_field :company_id, value: @json["company_id"] %>
+  <%= f.hidden_field :release_id, value: @json["release_id"] %>
+  <%= f.submit 'ひとことを作成'%>
+<% end %>

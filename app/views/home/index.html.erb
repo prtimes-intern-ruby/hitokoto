@@ -1,0 +1,3 @@
+<% @result.each do |obj| %>
+  <%= link_to obj["title"], pr_show_path(company_id: obj['company_id'], release_id: obj['release_id'])%>
+<% end %>
