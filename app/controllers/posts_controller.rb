@@ -5,21 +5,26 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def create
     post = current_user.posts.new(post_params)
     post.category_id = params[:post][:category].to_i
     if post.save
-      redirect_to post_path(post) 
+      redirect_to post_path(post)
     else
-      redirect_to user_path(current_user)
+      redirect_to request.referer
     end
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
+<<<<<<< HEAD
   def timeline
     posts = current_user.posts
     current_user.followings.each { |following| posts += following.posts }
@@ -32,6 +37,9 @@ class PostsController < ApplicationController
   end
 
   private 
+=======
+  private
+>>>>>>> master
     def post_params
       params.require(:post).permit(:title, :content, :image, :company_id, :release_id)
     end
