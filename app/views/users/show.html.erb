@@ -1,12 +1,59 @@
-<%= link_to user_followings_path(@user) do %>
-  フォロー<br>
-  <%= @user.followings.count %>
-<% end %>
-<%= link_to user_followers_path(@user) do %>
-  フォロワー<br>
-  <%= @user.followers.count %>
-<% end %>
+<div class="user_show">
+          <div class="plofile">
+              <h2>プロフィール</h2>
+              <div class="plo">
+                <img  src="./sample_image/sample_man.jpg" alt="" align="top">
+                <li>
+                  <p>name</p>
+                  <a href="#">編集</a>
+                  <div class="plofile_btn">
+                    <a href="#">フォロー</a>
+                    <a href="#">フォローアウト</a>
+                  </div>
+                </li>
+              </div>
 
-<div class="follow-btn">
-  <%= render 'users/follow_btn', user: @user %>
+
+          </div>
+          <div id="main_post">
+            <div class="large_width">
+              <div class="aaa">
+              <h2>ユーザーの投稿</h2>
+                  <ul>
+                    <% @user.posts.each do |post| %>
+                      <li class="aaa_list a_hover">
+                        <%= link_to post_path(post) do %>
+                          <div class="post_word">
+                            <%= image_tag post.image_id, class:"post_img my_img"%>
+                            <div class="post_back">
+                              <div class="post_state">
+                                <div class="user_introduction">
+                                  <div class="user_state_box">
+                                      <%= attachment_image_tag(post.user, :profile_image, :fill, fallback: "no-image-icon.jpg") %>
+                                    <p class="user_name">
+                                      <%= post.user.name %>
+                                    </p>
+                                  </div>
+                                  <span class=<%= "favorite-" + post.id.to_s %>>
+                                    <%= render 'favorites/favorites', post: post, user: current_user %>
+                                  </span>
+                                </div>
+                              </div>
+                              <p class="post_title"><%= post.title %></p>
+                            </div>
+                          </div>
+                        <% end %>
+                      </li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="follow-btn">
+                <%= render 'users/follow_btn', user: @user %>
+              </div>
+            </div>
+          </div>
+          
+          
 </div>

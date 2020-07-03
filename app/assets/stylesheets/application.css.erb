@@ -26,6 +26,21 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
   box-sizing: border-box;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
 body {
   background-color: rgb(255, 255, 255);
 }
@@ -425,5 +440,133 @@ header {
   background-color: rgba(155,192,28,0.1);
   margin-top: 0px;
   width: 100%;
+
+}
+
+.user_show {
+  margin: 0 auto;
+  text-align: center;
+  width:80%;
+
+}
+
+.plo {
+  display: flex;
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  font-size: 20px;
+
+}
+
+.plo p {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.plofile_btn {
+  margin-top: 30px;
+
+}
+.user_show h2 {
+  color:black;
+  font-size: 50px;
+}
+.user_shouw img {
+  width: 80px;
+  height: 80px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin: 20px 0 10px;
+  object-fit: cover;
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
+.user_posts{
+  width: 60%;
+  margin: 0 auto;
+
+
+}
+
+.user_posts li {
+  border-bottom: 1px solid #e5e5e5;
+  float:none;
+  padding-bottom: 0;
+  width:640px;
+  list-style: none;
+}
+
+.user_posts li a {
+  display:block;
+  text-decoration: none;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+}
+
+.txt {
+  font-size: 40px;
+  color: black;
+  text-decoration: none;
+
+}
+
+.follow-follwer {
+  margin-top: 30px;
+  width:80%;
+
+}
+.follows {
+  width:30%;
+  float: left;
+  margin-left: 50px;
+
+}
+.follow {
+  display: flex;
+  align-items: center;
+  width:30%;
+  float: left;
+
+}
+.follower {
+  float: left;
+}
+.followers {
+  display: block;
+  align-items: flex;
+  width:30%;
+  float: right;
+  margin-right: 50px;
+
+}
+
+.follow img {
+  width:50px;
+  height: 50px;
+
+}
+
+footer {
+  width:100%;
+  background-color: rgba(200, 200, 200, 0.5);
+  text-align: center;
+  height: 80px ;
+  padding-top :30px;
+
+
+}
+
+footer img {
+  height: 80px ;
+  padding: auto 0;
+
 
 }
