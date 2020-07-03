@@ -1,20 +1,54 @@
-<%= @result['title'] %>
+
+<div class="main_text">
+<br>
+    <br>
+    <h2><%= @result['title'] %></h2>
+    <div class="main_image">
+      <img src="./sample_image/sample_food.jpg" alt="">
+      <img src="./sample_image/sample_food.jpg" alt="">
+      <img src="./sample_image/sample_food.jpg" alt="">
+      <img src="./sample_image/sample_food.jpg" alt="">
+      <img src="./sample_image/sample_food.jpg" alt="">
+      <img src="./sample_image/sample_food.jpg" alt="">
+      <img src="./sample_image/sample_food.jpg" alt="">
+    </div>
+
+      <p style="white-space:pre-wrap;">当イベントはこれまでの参加者が1,000名*1を超える同名称のリアルイベント「クリエイティブ・クッキングバトル」を、昨今の新型コロナウイルス感染症（COVID-19）の影響を鑑みてオンライン化したものです。「毎日の料理を楽しみにする」をミッションに掲げるクックパッドは、本取り組みを通じて一人でも多くの人に「フードロス」を意識するきっかけを提供することを目指します。
+      ＊1　参加者数はこれまでのクリエイティブ・クッキングバトルの競技者、審査員を含む延べ人数です。
+
+
+      ■背景：日本の食品ロスは年間約612万トン、そのうち約半分は家庭から。
+      2015年9月に国際連合で採択された「持続可能な開発のための2030アジェンダ」で定められている「持続可能な開発目標（SDGs）」のターゲットには、「2030年までに小売・消費レベルにおける世界全体の一人当たりの食料の廃棄を半減させること」が盛り込まれおり、食品ロスは国際的にも関心が寄せられています。
+
+      2011年FAOの発表によれば、世界の食料の1／3（1年当たり約13億トン）*2が食べられずに廃棄されているとされています。また、日本における食品ロスは年間約612万トン*3あり、その約半分は一般家庭ゴミから出ています。これは世界中で飢餓に苦しむ人々の食糧援助量(約420万トン) *4の約1.5倍にあたります。
+
+      このような状況下において「毎日の料理を楽しみにする」をミッションに掲げるクックパッドは、楽しい料理体験を通じて一人でも多くの人がフードロスを意識する「きっかけ」づくりを目的に当イベントの開催を決定しました。本イベントは、フードロスに関心のある方のみならず、多くの「フードロスに関心がない方」にも楽しんで参加いただけるよう「クリエイティビティ」をテーマにしています。
+
+      ＊2　FAO「世界の⾷料ロスと⾷料廃棄」（2011年）
+      ＊3　日本の食品ロス量（平成29年度推計）農林水産省・環境省
+      ＊4　国連世界食糧計画 （World Food Programme:WFP）2019年実績
+      </p>
+      <div class="form-body">
+        <h3>ヒトコトを作成</h3>
+        <%= form_for(Post.new) do |f| %>
+          <% if flash[:error_message] %>
+            <%= flash[:error_message] %>
+          <% end %>
+          <%= f.text_field :title %><br><br>
+          <%= f.text_area :content %><br><br>
+          <%= f.collection_select :category, Category.all, :id, :name, {include_blank: '選択してください'} %><br><br>
+          <%= f.hidden_field :company_id, value: @json["company_id"] %>
+          <%= f.hidden_field :release_id, value: @json["release_id"] %>
+          <%= hidden_field_tag :image, @result["main_image"] %>
+          <%= f.submit 'ひとことを作成'%>
+        <% end %>
+      </div>
+<br><br>
   <div>会社名：<%= @result['company_name']%></div>
+  <br><br>
   <div id="map">
   </div>
-
-<%= form_for(Post.new) do |f| %>
-  <% if flash[:error_message] %>
-    <%= flash[:error_message] %>
-  <% end %>
-  <%= f.text_field :title %><br>
-  <%= f.text_area :content %><br>
-  <%= f.collection_select :category, Category.all, :id, :name, {include_blank: '選択してください'} %>
-  <%= f.hidden_field :company_id, value: @json["company_id"] %>
-  <%= f.hidden_field :release_id, value: @json["release_id"] %>
-  <%= hidden_field_tag :image, @result["main_image"] %>
-  <%= f.submit 'ひとことを作成'%>
-<% end %>
+</div>
 
 
   <script>

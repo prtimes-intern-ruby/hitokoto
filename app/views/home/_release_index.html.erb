@@ -3,12 +3,12 @@
 <br>
     <h2>プレスリリース一覧</h2>
     <% if category_id == '41' %>
-      食品・お菓子
-      <%= link_to 'レストラン・ファストフード・居酒屋', pr_records_path(category_id: '43') %>
+      食品・お菓子  |  
+      <%= link_to 'レストラン・ファストフード・居酒屋', pr_records_path(category_id: '43') %>  |  
       その他プレスリリース情報は<%= link_to 'こちら', 'https://prtimes.jp/' %>
     <% else %>
-      <%= link_to '食品・お菓子', pr_records_path(category_id: '41') %>
-      レストラン・ファストフード・居酒屋
+      <%= link_to '食品・お菓子', pr_records_path(category_id: '41') %>  |  
+      レストラン・ファストフード・居酒屋  |  
       その他のプレスリリース情報は<%= link_to 'こちら', 'https://prtimes.jp/' %>
     <% end %>
 <br>
