@@ -1,32 +1,4 @@
-<% @result.each do |obj| %>
-  <%= link_to obj["title"], pr_show_path(company_id: obj['company_id'], release_id: obj['release_id'])%><br>
-<% end %>
 
-<% if @page_number != '1' %>
-  <%= link_to '最初へ', pr_records_path(page: '1')%>
-<% end %>
-
-<% if @page_number == '1' %>
-  <% 5.times do |n| %>
-  <% n += 1 %>
-    <% if n == 1 %>
-      <%= @page_number%>
-    <% else %>
-      <%= link_to n.to_s, pr_records_path(page: n.to_s) %>
-    <% end %>
-  <% end %>
-<% elsif @page_number == '2' %>
-  <% x = 3 %>
-  <%= link_to '1', pr_records_path(page: '1')%>
-  <%= @page_number %>
-  <% 3.times do |n| %>
-    <%= link_to x.to_s, pr_records_path(page: x.to_s )%>
-    <% x += 1 %>
-  <% end %>
-<% else %>
-  <%= link_to (@page_number.to_i - 2).to_s, pr_records_path(page: (@page_number.to_i - 2).to_s) %>
-  <%= link_to (@page_number.to_i - 1).to_s, pr_records_path(page: (@page_number.to_i - 1).to_s) %>
-  <%= @page_number %>
-  <%= link_to (@page_number.to_i + 1).to_s, pr_records_path(page: (@page_number.to_i + 1).to_s) %>
-  <%= link_to (@page_number.to_i + 2).to_s, pr_records_path(page: (@page_number.to_i + 2).to_s) %>
-<% end %>
+<div class="release-index">
+  <%= render 'home/release_index', result: @result, page_number: @page_number, category_id: @category_id %>
+</div>

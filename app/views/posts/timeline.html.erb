@@ -1,0 +1,13 @@
+<% @posts.each do |post| %>
+  <div>
+    <%= post.title %>
+    <%= post.content %>
+    <%= post.user.name %>
+    <%= post.set_date %>
+    <div class=<%= "favorite-" + post.id.to_s %>>
+      <%= render 'favorites/favorites', post: post, user: current_user %>
+    </div>
+  </div>
+<% end %>
+
+<%= paginate @posts %>

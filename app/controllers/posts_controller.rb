@@ -1,9 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   def index
-    posts = current_user.posts
-    current_user.followings.each { |following| posts += following.posts }
-    @posts = posts.page(params[:page]).per(20).order(created_at: :desc)
+    @posts = Post.page(params[:page]).per(20).order(created_at: :desc)
   end
 
   def show
@@ -26,7 +24,22 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+<<<<<<< HEAD
+  def timeline
+    posts = current_user.posts
+    current_user.followings.each { |following| posts += following.posts }
+    @posts = posts.page(params[:page]).per(20).order(created_at: :desc)
+  end
+
+  def category
+    @category = Category.find_by(name: params[:name])
+    @posts = @category.posts.page(params[:page]).per(20).order(created_at: :desc)
+  end
+
+  private 
+=======
   private
+>>>>>>> master
     def post_params
       params.require(:post).permit(:title, :content, :image, :company_id, :release_id)
     end
