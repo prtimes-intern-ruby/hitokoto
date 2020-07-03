@@ -1,13 +1,36 @@
-<% @posts.each do |post| %>
-  <div>
-    <%= post.title %>
-    <%= post.content %>
-    <%= post.user.name %>
-    <%= post.set_date %>
-    <div class=<%= "favorite-" + post.id.to_s %>>
-      <%= render 'favorites/favorites', post: post, user: current_user %>
+<div id="main_post">
+  <div class="large_width">
+    <div class="aaa">
+    <h2>新着一覧</h2>
+        <ul>
+          <% @posts.each do |post| %>
+            <li class="aaa_list a_hover">
+              <%= link_to post_path(post) do %>
+                <div class="post_word">
+                  <%= image_tag post.image_id, class:"post_img my_img"%>
+                  <div class="post_back">
+                    <div class="post_state">
+                      <div class="user_introduction">
+                        <div class="user_state_box">
+                            <%= attachment_image_tag(post.user, :profile_image, :fill, fallback: "no-image-icon.jpg") %>
+                          <p class="user_name">
+                            <%= post.user.name %>
+                          </p>
+                        </div>
+                        <span class=<%= "favorite-" + post.id.to_s %>>
+                          <%= render 'favorites/favorites', post: post, user: current_user %>
+                        </span>
+                      </div>
+                    </div>
+                    <p class="post_title"><%= post.title %></p>
+                  </div>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
+    <%= paginate @posts %>
   </div>
-<% end %>
-
-<%= paginate @posts %>
+</div>

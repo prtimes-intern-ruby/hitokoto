@@ -218,3 +218,142 @@ h2 {
   line-height: 150%;
 }
 
+#main_post .trend,
+#main_post .post_rank,
+#main_post .post_look {
+    margin-bottom: 80px;
+}
+
+#main_post .trend ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#main_post .post_list {
+    width: 32%;
+    margin-bottom: 35px;
+}
+
+#main_post .post_word {
+    position: relative;
+    width: 100%;
+}
+
+#main_post .post_back {
+    width: 100%;
+    height: 25%;
+    line-height: 53px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-weight: bold;
+    background-color: black;
+    background: rgba(0,0,0,0.5);
+
+}
+
+#main_post .post_state {
+    margin-top: 10px;
+    padding: 0 10px 15px
+}
+
+#main_post .post_back .post_title {
+    color: #fff;
+    font-size: 20px;
+}
+
+#main_post .post_img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+#main_post .user_introduction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#main_post .user_state_box {
+    display: flex;
+    align-items: center;
+}
+
+#main_post .user_introduction img {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    object-fit: cover;
+    margin-right: 5px;
+}
+
+#main_post .user_name {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 19px;
+}
+
+#main_post .rank_list {
+    display: flex;
+    justify-content: space-between;
+}
+
+#main_post .post_first {
+    width: 65%;
+}
+
+#main_post .post_first .post_img {
+    height: 500px;
+}
+
+#main_post .post_first .post_back {
+    height: 20%;
+    line-height: 98px;
+    padding: 0 10px;
+}
+
+#main_post .post_first .post_title {
+    font-size: 25px;
+}
+
+#main_post .rank_less {
+    width: 33%;
+}
+
+#main_post .rank_less_list {
+    margin-bottom: 5px;
+}
+
+#main_post ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+
+/* 投稿一覧候補２ */
+#main_post .aaa_list {
+    width: 50%;
+}
+
+#main_post .aaa .post_back {
+    height: 33%;
+}
+
+#main_post .aaa .post_state {
+    padding: 0;
+}
+
+#main_post .aaa .post_img {
+    height: 350px;
+}
+
+#main_post .aaa .user_name {
+    color: #fff;
+}
