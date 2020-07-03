@@ -24,7 +24,6 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
-<<<<<<< HEAD
   def timeline
     posts = current_user.posts
     current_user.followings.each { |following| posts += following.posts }
@@ -37,9 +36,6 @@ class PostsController < ApplicationController
   end
 
   private 
-=======
-  private
->>>>>>> master
     def post_params
       params.require(:post).permit(:title, :content, :image, :company_id, :release_id)
     end
