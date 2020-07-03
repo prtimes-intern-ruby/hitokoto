@@ -13,3 +13,208 @@
  *= require_tree .
  *= require_self
  */
+
+ /* Resets (http://meyerweb.com/eric/tools/css/reset/ | v2.0 | 20110126 | License: none (public domain)) */
+​
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}table{border-collapse:collapse;border-spacing:0;}body{-webkit-text-size-adjust:none}
+​
+/* Box Model */
+​
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  transition: .4s;
+}
+
+li {
+  transition: .4s;
+}
+
+a:hover,
+.a_hover:hover {
+  box-shadow: 0 0 8px gray;
+}
+
+h2 {
+  margin-bottom: 20px;
+  padding-bottom: 7px;
+  border-bottom: solid 1px #ddd;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+
+.large_width {
+  width: 1000px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.min_large {
+  width: 532px;
+  margin: 0 auto;
+}
+
+ #follow_line .post_look {
+  margin-top: 40px;
+}
+
+#follow_line .post_look h2 {
+  margin-bottom: 0;
+}
+
+#follow_line ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+} 
+
+#follow_line .look_list {
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: solid 1px #ddd;
+  border-right: solid 1px #ddd;
+}
+
+#follow_line .look_card {
+  display: flex;
+}
+
+#follow_line .look_card .post_img {
+  width: 50%;
+  height: 230px;
+  object-fit: cover;
+}
+
+#follow_line .look_state {
+  margin-left: 20px;
+  padding-top: 15px;
+}
+
+#follow_line .look_back {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#follow_line .user_state_box {
+  display: flex;
+  align-items: center;
+}
+
+#follow_line .user_state_box img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+#follow_line .look_back .post_title {
+  font-size: 22px;
+}
+
+#follow_line .look_list .user_name{
+  font-size: 17px;
+  font-weight: bold;
+  margin-left: 7px;
+  text-decoration: underline;
+}
+
+#follow_line .like  {
+  margin-top: 75px;
+}
+
+#follow_line .post_like {
+  color: #fff;
+}
+
+#post_show .main_show_img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+#post_show .post_show_text {
+  width: 93%;
+  margin: 40px auto 80px;
+}
+
+#post_show h2 {
+  font-size: 32px;
+  font-weight: bold;
+  padding-bottom: 7px;
+  border-bottom: solid 1px #ddd;
+}
+
+#post_show .user_box {
+  display: flex;
+  border-bottom: solid 1px #ddd;
+  border-right: solid 1px #ddd;
+  border-left: solid 1px #ddd;
+}
+
+#post_show .show_pa_in {
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  width: 50%;
+  border-right: solid 1px #ddd;
+}
+
+#post_show .show_my_img {
+  width: 85px;
+  height: 85px;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+#post_show .show_user_name {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-left: 7px;
+}
+
+#post_show .post_edit_box {
+  width: 50%;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#post_show .post_edit_box a {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px
+}
+
+#post_show .post_edit_box a:hover {
+  text-decoration: underline;
+  box-shadow: none;
+}
+
+#post_show h3 {
+  font-size: 23px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #ddd;
+  margin: 30px 0 10px;
+  font-weight: bold;
+}
+
+#post_show .post_state_text {
+  font-size: 17px;
+  line-height: 150%;
+}
+

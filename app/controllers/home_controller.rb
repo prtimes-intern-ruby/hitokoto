@@ -27,6 +27,7 @@ class HomeController < ApplicationController
     json = Net::HTTP.get(uri)
     @result = JSON.parse(json)["data"]
     @json = JSON.parse(json)
+    puts @result
   end
 
   private

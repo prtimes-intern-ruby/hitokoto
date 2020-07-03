@@ -1,13 +1,42 @@
-<% @posts.each do |post| %>
-  <div>
-    <%= post.title %>
-    <%= post.content %>
-    <%= post.user.name %>
-    <%= post.set_date %>
-    <div class=<%= "favorite-" + post.id.to_s %>>
-      <%= render 'favorites/favorites', post: post, user: current_user %>
+<div id="follow_line">
+  <div class="large_width">
+    <div class="post_look">
+      <h2>タイムライン</h2>
+      <ul>
+        <% @posts.each do |post| %>
+          <li class="look_list a_hover">
+              <div class="look_card">
+                <%= link_to post_path(post) do %>
+                  <%= image_tag post.image_id, class: "post_img" %>
+                <% end %>
+                <div class="look_state">
+                  <div class="look_back">
+                    <p class="post_title"><%= post.title %></p>
+                  </div>
+                  <div class="user_introduction">
+                    <div class="user_state_box">
+                      <%= attachment_image_tag(post.user, :profile_image, :fill, 60, 60, fallback: "no-image-icon.jpg") %>
+                      <p class="user_name">
+                        <% if post.user.name %>
+                          <%= link_to post.user.name, user_path(post.user) %>
+                        <% else %>
+                          <%= link_to '名無しさん', user_path(post.user) %>
+                        <% end %>
+                      </p>
+                    </div>
+                  </div>
+                  <p class="like">
+                    <span class=<%= "favorite-" + post.id.to_s %>>
+                      <%= render 'favorites/favorites', post: post, user: current_user %>
+                    </span>
+                    <%= post.set_date %>
+                  </p>
+                </div>
+              </div>
+          </li>
+        <% end %>  
+      </ul>
     </div>
   </div>
-<% end %>
-
-<%= paginate @posts %>
+  <%= paginate @posts %>
+</div>

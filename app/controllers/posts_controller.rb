@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   def create
     post = current_user.posts.new(post_params)
     post.category_id = params[:post][:category].to_i
+    post.image_id = params[:image]
     if post.save
       flash[:error_message] = nil
       redirect_to post_path(post)
@@ -29,7 +30,7 @@ class PostsController < ApplicationController
   def timeline
     posts = current_user.posts
     current_user.followings.each { |following| posts += following.posts }
-    @posts = posts.page(params[:page]).per(20).order(created_at: :desc)
+    @posts = posts.order(created_at: :desc).page(params[:page]).per(20)
   end
 
   def category
@@ -39,6 +40,6 @@ class PostsController < ApplicationController
 
   private 
     def post_params
-      params.require(:post).permit(:title, :content, :image, :company_id, :release_id)
+      params.require(:post).permit(:title, :content, :company_id, :release_id)
     end
 end

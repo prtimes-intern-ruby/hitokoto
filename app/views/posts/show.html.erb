@@ -1,1 +1,29 @@
-<%=link_to "削除", post_path{@post}, method: :delete%>
+<div id="post_show">
+  <div class="large_width">
+      <div class="post_show">
+          <%= image_tag @post.image_id%>
+          <div class="post_show_text">
+              <h2><%= @post.title %></h2>
+              <div class="user_box">
+                  <%= link_to user_path(@post.user) do %>
+                    <%= attachment_image_tag(@post.user, :profile_image, :fill, 60, 60, fallback: "no-image-icon.jpg") %>
+                    <%= @post.user.name%>
+                  <% end %>
+                  <div class="post_edit_box">
+                    <% if @post.user == current_user %>
+                      <span class=<%= "favorite-" + @post.id.to_s %>>
+                        <%= render 'favorites/favorites', post: @post, user: current_user %>
+                      </span>
+                      <%=link_to "削除", post_path{@post}, method: :delete%>
+                    <% end %>
+                  </div>
+              </div>
+              <h3>投稿詳細</h3>
+              <p class="post_state_text">
+                <%= @post.content%>
+              </p>
+          </div>
+      </div>
+  </div>
+</div>
+
