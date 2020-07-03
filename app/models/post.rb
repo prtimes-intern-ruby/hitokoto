@@ -9,4 +9,12 @@ class Post < ApplicationRecord
   # content空がダメ
   validates :content,
     presence: true
+
+  def set_date
+    created_at.strftime("%m月%d日%H時%M分")
+  end
+
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 end
