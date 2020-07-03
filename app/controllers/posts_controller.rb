@@ -12,9 +12,11 @@ class PostsController < ApplicationController
     post = current_user.posts.new(post_params)
     post.category_id = params[:post][:category].to_i
     if post.save
+      flash[:error_message] = nil
       redirect_to post_path(post)
     else
       redirect_to request.referer
+      flash[:error_message] = 'エラーが発生しました'
     end
   end
 
