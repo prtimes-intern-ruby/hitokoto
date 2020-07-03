@@ -357,3 +357,73 @@ h2 {
 #main_post .aaa .user_name {
     color: #fff;
 }
+
+
+header {
+  height:80px;
+  width: 100%;
+  background-color: white;
+  background-size: contain;
+  width:100%;
+
+  position :fixed;
+  top: 0;
+  z-index: 10;
+}
+
+
+.header-left {
+  float: left;
+  padding-left: 80px;
+}
+
+.header-right {
+  float: right;
+  margin-right: -25px;
+  background-image: url(<%= asset_path('right.png') %>);
+  padding-right: 40px;
+}
+
+
+.header-right a {
+  background-color: rgba(255, 255, 255, 0.3);
+  line-height: 80px;
+  padding: 0 25px;
+  color: rgba(200, 200, 200, 1);
+  font-weight: bold;
+  display: block;
+  float: left;
+  transition: all 0.5s;
+}
+
+.header-right a:hover {
+  background-color: rgba(200, 200, 200, 0.3);
+}
+
+.form-heading{
+  font-size: 50px;
+  color: rgba(250,103,117);
+}
+ .news {
+   margin-top:200px;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+   padding: 0.5em 1em;
+   font-weight: bold;
+   border: solid 3px rgba(250,103,117) ;
+   width:60%;
+   background-color: rgba(250,103,117,0.3);
+
+ }
+
+ .form-body {
+   color: rgba(250,103,117);
+ }
+
+.body {
+  background-color: rgba(155,192,28,0.1);
+  margin-top: 0px;
+  width: 100%;
+
+}

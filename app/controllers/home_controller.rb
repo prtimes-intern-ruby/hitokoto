@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_action :authenticate_user!
   require "net/http"
   def top
     @categories = Category.all
