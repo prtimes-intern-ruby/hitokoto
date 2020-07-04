@@ -1,5 +1,6 @@
 <div id="post_show">
   <div class="large_width">
+  <br><br><br><br>
       <div class="post_show">
           <%= image_tag @post.image_id%>
           <div class="post_show_text">
@@ -10,10 +11,13 @@
                     <%= @post.user.name%>
                   <% end %>
                   <div class="post_edit_box">
-                    <% if @post.user == current_user %>
-                      <span class=<%= "favorite-" + @post.id.to_s %>>
+                    
+                    <span class=<%= "favorite-" + @post.id.to_s %>>
                         <%= render 'favorites/favorites', post: @post, user: current_user %>
-                      </span>
+                    </span>
+                    <%= link_to 'こちらのプレスリリースへ飛ぶ', pr_show_path(company_id: @post.company_id, release_id: @post.release_id) %>
+                    
+                    <% if @post.user == current_user %>
                       <%=link_to "削除", post_path{@post}, method: :delete%>
                     <% end %>
                   </div>

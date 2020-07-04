@@ -27,3 +27,4 @@ Category.create([
 20.times do |n|
   User.create(email: "#{n}@a.com", password: '000000', name: "test_user#{n}")
 end
+

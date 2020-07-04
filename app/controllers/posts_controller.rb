@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   def timeline
     posts = current_user.posts
     current_user.followings.each { |following| posts += following.posts }
-    @posts = posts.order(created_at: :desc).page(params[:page]).per(20)
+    @posts = posts
   end
 
   def category
